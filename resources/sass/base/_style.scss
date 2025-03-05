@@ -130,3 +130,21 @@ em, i {
 [data-link]{
   cursor: pointer;
 }
+
+input, textarea{
+  color: #17043A;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
+  &::placeholder{
+    color: #17043A;
+    font-family: "Hind Siliguri", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    opacity: 0.4;
+  }
+}
