@@ -1,0 +1,217 @@
+.header {
+  position: relative;
+
+  &__button {
+    display: flex;
+    padding: 1.4rem 2.4rem;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.8rem;
+    background: #17043A;
+    color: #FFF;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      background: #F27129;
+    }
+
+    @media (max-width: 900px) {
+      padding: 1.4rem 1rem;
+    }
+    @media (max-width: 380px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &-form {
+    position: relative;
+    width: 40rem;
+    height: 5.6rem;
+    @media (max-width: 900px) {
+      width: 26rem;
+    }
+    @media (max-width: 660px) {
+      flex-grow: 1;
+      width: 20rem;
+    }
+
+    &-label {
+
+    }
+
+    &__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 8rem;
+      padding: 1.4rem 2.4rem;
+      align-items: center;
+      border-radius: 0rem 0.8rem 0.8rem 0rem;
+      background: #5A00FF;
+      border: 1px solid #5A00FF;
+      outline: none;
+      cursor: pointer;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        background: #F27129;
+        border-color: #F27129;
+      }
+
+      @media (max-width: 900px) {
+        padding: 1.4rem 1rem;
+        width: auto;
+      }
+
+    }
+
+    &__input {
+      height: 100%;
+      padding: 1.4rem 8.4rem 1.4rem 2.4rem;
+      border-radius: 0.8rem;
+      border-top: 1px solid #E0DEE4;
+      border-bottom: 1px solid #E0DEE4;
+      border-left: 1px solid #E0DEE4;
+      font-family: "Hind Siliguri", sans-serif;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 170%;
+      color: #17043A;
+
+      &::placeholder {
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 170%;
+        color: #17043A;
+        opacity: 0.4;
+        transition: 0.4s ease-in-out;
+      }
+
+      &:hover {
+
+        &::placeholder {
+          opacity: 0.6;
+
+        }
+      }
+    }
+
+    &-label {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @media (max-width: 900px) {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    @media (max-width: 660px) {
+      width: 100%;
+    }
+  }
+
+  &-container {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    padding: 1.6rem 0;
+    background: #fff;
+
+    @media (max-width: 660px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &-nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      text-transform: capitalize;
+      transition: 0.4s ease-in-out;
+
+      svg {
+        path {
+          transition: 0.4s ease-in-out;
+          fill: #fff;
+        }
+      }
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.8rem;
+        width: 2.4rem;
+        height: 2.4rem;
+
+      }
+
+      &:hover {
+        color: #F27129;
+
+        svg {
+          path {
+            fill: #F27129;
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    padding: 1.6rem 0;
+    background: #17043A;
+    transition: 0.2s ease-in-out;
+    @media (max-width: 1024px) {
+      transform: translateY(-200%);
+      position: absolute;
+      width: 100%;
+      right: 0;
+      top: 100%;
+      background: rgba(#17043A, 0.8);
+    }
+    &.active {
+      @media (max-width: 1024px) {
+        transform: translateY(0);
+      }
+    }
+  }
+}

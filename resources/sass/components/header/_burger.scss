@@ -1,0 +1,36 @@
+.burger {
+  display: none;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #5A00FF;
+    transition: 0.5s ease;
+
+    &:nth-child(2) {
+      margin: auto;
+    }
+  }
+
+  &.active {
+    span {
+      &:nth-child(1), &:nth-child(3) {
+        opacity: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 660px) {
+    position: absolute;
+    right:  1.6rem;
+    top: 2rem;
+  }
+
+}
