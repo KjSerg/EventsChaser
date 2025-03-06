@@ -15,7 +15,8 @@ export const toggler = () => {
         } else {
             $t.addClass('active');
             $elem.addClass(cls);
-            if($(window).height() <= 500){
+            if ($t.hasClass('not-scroll')) return;
+            if ($(window).height() <= 500) {
                 $('html, body').animate({
                     scrollTop: $elem.offset().top
                 })

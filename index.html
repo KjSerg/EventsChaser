@@ -19,7 +19,7 @@
                 <span style="color: #5A00FF">Events</span>
                 Chaser
             </a>
-            <form action="./" method="get" class="header-form">
+            <form action="./" method="get" id="header-form" class="header-form">
                 <label class="header-form-label">
                     <input type="text" placeholder="Search" name="s" class="header-form__input">
                     <button class="header-form__button" type="submit">
@@ -29,6 +29,9 @@
             </form>
             <a href="#" class="header__button">
                 Log in / Register
+            </a>
+            <a href="#header-form" class="header-form-toggler toggle-class not-scroll">
+                <img src="img/search.svg" alt="">
             </a>
             <a href="#" class="burger">
                 <span></span>
@@ -117,12 +120,17 @@
                         </a>
                     </li>
                 </ul>
+
             </nav>
+            <a href="#" class="header-nav__button">
+                Log in / Register
+            </a>
         </div>
     </div>
 </header>
 <main class="content">
-    <section class="section head-section" style="background-color: #F9F5FF;background-image: url(img/head-decor.png)">
+    <section class="section head-section" >
+        <div class="head-section-decoration" style="background-color: #F9F5FF;background-image: url(img/head-decor.png)"></div>
         <div class="container">
             <div class="head-container">
                 <div class="head-ticket">
@@ -170,6 +178,31 @@
                     </div>
                 </li>
             </ul>
+        </div>
+    </section>
+    <section class="section events-section">
+        <div class="container">
+            <div class="events-container">
+                <div class="title events__title">
+                    <h2>
+                        Featured Events
+                    </h2>
+                </div>
+                <div class="events">
+                    <div class="event">
+                        <div class="event__image">
+                            <img src="img/i1mage.jpg" class="cover" alt="">
+                        </div>
+                        <div class="event-data">
+                            <div class="event-head">
+                                <a href="#"  class="event__title">Mean Girls</a>
+                                <a href="#" class="event__tag">Comedy</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>

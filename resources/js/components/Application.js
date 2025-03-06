@@ -8,6 +8,7 @@ import {selectrickInit} from "../plugins/_selectric-init";
 import FormHandler from "./forms/FormHandler";
 import Slick from "../plugins/Slick";
 import {makeActiveStars} from "./forms/_rating-inputs";
+import {toggler} from "./ui/_togglers";
 
 export default class Application {
     constructor() {
@@ -41,6 +42,7 @@ export default class Application {
         this.$doc.ready(() => {
             showNotices();
             burger();
+            toggler();
             accordion();
             numberInput();
             showPassword();
@@ -66,6 +68,7 @@ export default class Application {
             if (hashValue !== undefined) {
                 const $el = t.$doc.find('#' + hashValue);
                 if ($el.length > 0) {
+                    if ($t.hasClass('not-scroll')) return;
                     $('html, body').animate({
                         scrollTop: $el.offset().top
                     });

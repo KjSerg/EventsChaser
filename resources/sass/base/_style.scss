@@ -3,6 +3,10 @@ html {
   @media (max-width: 1200px) {
     font-size: 9px;
   }
+  @media (max-width: 375px) {
+    font-size: 10px;
+
+  }
 }
 
 body {
@@ -146,5 +150,24 @@ input, textarea{
     font-weight: 400;
     line-height: 170%;
     opacity: 0.4;
+  }
+}
+
+.title{
+  margin-bottom: 3.2rem;
+  color: #17043A;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 4.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: capitalize;
+  @media (max-width: 1600px) {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 2rem;
+    font-size: 3rem;
   }
 }

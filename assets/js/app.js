@@ -24925,6 +24925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forms/FormHandler */ "./resources/js/components/forms/FormHandler.js");
 /* harmony import */ var _plugins_Slick__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../plugins/Slick */ "./resources/js/plugins/Slick.js");
 /* harmony import */ var _forms_rating_inputs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/_rating-inputs */ "./resources/js/components/forms/_rating-inputs.js");
+/* harmony import */ var _ui_togglers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui/_togglers */ "./resources/js/components/ui/_togglers.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -24932,6 +24933,7 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -24979,6 +24981,7 @@ var Application = /*#__PURE__*/function () {
       this.$doc.ready(function () {
         (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_5__.showNotices)();
         (0,_ui_burger__WEBPACK_IMPORTED_MODULE_1__.burger)();
+        (0,_ui_togglers__WEBPACK_IMPORTED_MODULE_10__.toggler)();
         (0,_ui_accardion__WEBPACK_IMPORTED_MODULE_2__.accordion)();
         (0,_forms_number_input__WEBPACK_IMPORTED_MODULE_3__.numberInput)();
         (0,_forms_show_password__WEBPACK_IMPORTED_MODULE_4__.showPassword)();
@@ -25004,6 +25007,7 @@ var Application = /*#__PURE__*/function () {
         if (hashValue !== undefined) {
           var $el = t.$doc.find('#' + hashValue);
           if ($el.length > 0) {
+            if ($t.hasClass('not-scroll')) return;
             $('html, body').animate({
               scrollTop: $el.offset().top
             });
@@ -25555,6 +25559,47 @@ var burger = function burger() {
     } else {
       $t.addClass('active');
       $menu.addClass('active');
+    }
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/ui/_togglers.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/ui/_togglers.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   toggler: () => (/* binding */ toggler)
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+var toggler = function toggler() {
+  var $doc = $(document);
+  $doc.on('click', '.toggle-class', function (e) {
+    e.preventDefault();
+    var $t = $(this);
+    var isActive = $t.hasClass('active');
+    var href = $t.attr('href');
+    var cls = $t.attr('data-class') || 'active';
+    if (href === undefined) return;
+    var $elem = $doc.find(href);
+    if ($elem.length === 0) return;
+    if (isActive) {
+      $t.removeClass('active');
+      $elem.removeClass(cls);
+    } else {
+      $t.addClass('active');
+      $elem.addClass(cls);
+      if ($t.hasClass('not-scroll')) return;
+      if ($(window).height() <= 500) {
+        $('html, body').animate({
+          scrollTop: $elem.offset().top
+        });
+      }
     }
   });
 };
