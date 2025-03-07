@@ -5,9 +5,9 @@
   align-items: stretch;
 
   .event {
-    flex: 1 1 calc(33.33% - 1.6rem);
+    width:  calc(33.33% - 1.6rem);
     @media (max-width: 1024px){
-      flex: 1 1 calc(50% - 1.6rem);
+      width:  calc(50% - 1.6rem);
     }
     @media (max-width: 767px){
       flex: 1 1 50.4rem;
