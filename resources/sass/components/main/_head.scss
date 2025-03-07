@@ -237,6 +237,9 @@
     @media (max-width: 375px) {
       padding-top: 6rem;
     }
+    @media (max-width: 450px) {
+      padding-bottom: 3rem;
+    }
     &-decoration{
       position: absolute;
       top: 0;
