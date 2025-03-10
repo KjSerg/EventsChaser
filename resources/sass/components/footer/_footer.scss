@@ -1,17 +1,57 @@
 .footer {
   background: #17043A;
-  &-container{
+
+  &-menu {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    a {
+      color: #FFF;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      text-transform: capitalize;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-menus {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
+    gap: 20rem;
+  }
+
+  &-column {
+    &:first-child {
+      width: 100%;
+      max-width: 36rem;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  &-certificates{
+
+  &-certificates {
     display: flex;
     align-items: center;
     gap: 3.2rem;
   }
-  &-certificate{
+
+  &-certificate {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +59,7 @@
     width: auto;
     max-width: 20rem;
   }
+
   &__logo {
     display: block;
     margin-bottom: 6rem;
@@ -29,4 +70,41 @@
     font-weight: 600;
     line-height: normal;
   }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+    padding: 1.6rem 0;
+  }
+
+  &-social-networks {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+      transition: 0.5s ease-in-out;
+      &:hover{
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.copyright {
+  opacity: 0.5;
+  color: #FFF;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
 }
