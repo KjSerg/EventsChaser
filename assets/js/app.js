@@ -24926,6 +24926,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugins_Slick__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../plugins/Slick */ "./resources/js/plugins/Slick.js");
 /* harmony import */ var _forms_rating_inputs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/_rating-inputs */ "./resources/js/components/forms/_rating-inputs.js");
 /* harmony import */ var _ui_togglers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui/_togglers */ "./resources/js/components/ui/_togglers.js");
+/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ui/_tabs */ "./resources/js/components/ui/_tabs.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -24933,6 +24934,7 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -24988,6 +24990,7 @@ var Application = /*#__PURE__*/function () {
         (0,_plugins_selectric_init__WEBPACK_IMPORTED_MODULE_6__.selectrickInit)();
         (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_5__.fancyboxInit)();
         (0,_forms_rating_inputs__WEBPACK_IMPORTED_MODULE_9__.makeActiveStars)();
+        (0,_ui_tabs__WEBPACK_IMPORTED_MODULE_11__.tabs)();
         _this.showLoaderOnClick();
         _this.linkListener();
         var form = new _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__["default"]('.form-js');
@@ -25560,6 +25563,40 @@ var burger = function burger() {
       $t.addClass('active');
       $menu.addClass('active');
     }
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/ui/_tabs.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/ui/_tabs.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   tabs: () => (/* binding */ tabs)
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+var tabs = function tabs() {
+  $(document).on('click', '.tab-head', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    var selector = $this.attr('href');
+    $this.addClass('active');
+    if (!selector) return;
+    var $element = $(document).find(selector);
+    if ($element.length === 0) return;
+    var $section = $element.closest('section');
+    $section = $section.length === 0 ? $element.closest('footer') : $section;
+    $section = $section.length === 0 ? $element.closest('header') : $section;
+    var isShowed = $element.hasClass('active');
+    $section.find('.tab-head').not($this).removeClass('active');
+    $section.find('.tab-content').not($element).removeClass('active');
+    if (isShowed) return;
+    $element.addClass('active');
   });
 };
 

@@ -1,0 +1,32 @@
+.footer {
+  background: #17043A;
+  &-container{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  &-certificates{
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
+  &-certificate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    width: auto;
+    max-width: 20rem;
+  }
+  &__logo {
+    display: block;
+    margin-bottom: 6rem;
+    color: #FFF;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 3.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

@@ -19,7 +19,7 @@ export const toggler = () => {
             if ($(window).height() <= 500) {
                 $('html, body').animate({
                     scrollTop: $elem.offset().top
-                })
+                });
             }
         }
     });
