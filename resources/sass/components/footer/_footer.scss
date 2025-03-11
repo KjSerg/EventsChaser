@@ -169,8 +169,15 @@
       flex-grow: 0;
       flex-shrink: 0;
       transition: 0.5s ease-in-out;
+      svg path{
+        fill: rgba(#fff, 0.5);
+        transition: 0.5s ease-in-out;
+      }
       &:hover{
         transform: scale(0.9);
+        svg path{
+          fill: rgba(#fff, 1);
+        }
       }
     }
   }

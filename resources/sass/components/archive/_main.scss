@@ -93,13 +93,7 @@
       height: 100%;
     }
   }
-  &__text{
-    columns: 2 auto;
-    column-gap: 14rem;
-    @media (max-width: 1024px) {
-      columns: 1;
-    }
-  }
+
   &__title{
     margin-bottom: 2.4rem;
     color: #17043A;

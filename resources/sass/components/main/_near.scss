@@ -124,6 +124,8 @@
     }
     background: #FFF;
     font-family: "Hind Siliguri", sans-serif;
+    transition: 0.4s ease-in-out;
+
     @media (max-width: 767px) {
       padding: 1.6rem;
     }
@@ -253,6 +255,7 @@
       font-weight: 400;
       line-height: 170%;
       text-align: center;
+      transition: 0.4s ease-in-out;
       @media (max-width: 767px) {
         width: auto;
         margin-right: 1.6rem;
@@ -273,6 +276,13 @@
         @media (max-width: 767px) {
           font-size: 1.8rem;
         }
+      }
+    }
+
+    &:hover{
+      background: #F9F5FF;
+      .near-event-date{
+        background-color: #fff;
       }
     }
   }
