@@ -10,6 +10,7 @@ import Slick from "../plugins/Slick";
 import {makeActiveStars} from "./forms/_rating-inputs";
 import {toggler} from "./ui/_togglers";
 import {tabs} from "./ui/_tabs";
+import {headerFormInit} from "./forms/_header-form";
 
 export default class Application {
     constructor() {
@@ -51,6 +52,7 @@ export default class Application {
             fancyboxInit();
             makeActiveStars();
             tabs();
+            headerFormInit();
             this.showLoaderOnClick();
             this.linkListener();
             const form = new FormHandler('.form-js');

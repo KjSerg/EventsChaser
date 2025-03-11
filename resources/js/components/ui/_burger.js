@@ -4,7 +4,7 @@ export const burger = () => {
         e.preventDefault();
         const $t = $(this);
         const isActive = $t.hasClass('active');
-        const $menu = $doc.find('.header-bottom');
+        const $menu = $doc.find('.header-mobile');
         if (isActive) {
             $t.removeClass('active');
             $menu.removeClass('active');

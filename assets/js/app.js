@@ -24927,6 +24927,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_rating_inputs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/_rating-inputs */ "./resources/js/components/forms/_rating-inputs.js");
 /* harmony import */ var _ui_togglers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui/_togglers */ "./resources/js/components/ui/_togglers.js");
 /* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ui/_tabs */ "./resources/js/components/ui/_tabs.js");
+/* harmony import */ var _forms_header_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/_header-form */ "./resources/js/components/forms/_header-form.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -24934,6 +24935,7 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -24991,6 +24993,7 @@ var Application = /*#__PURE__*/function () {
         (0,_plugins_fancybox_init__WEBPACK_IMPORTED_MODULE_5__.fancyboxInit)();
         (0,_forms_rating_inputs__WEBPACK_IMPORTED_MODULE_9__.makeActiveStars)();
         (0,_ui_tabs__WEBPACK_IMPORTED_MODULE_11__.tabs)();
+        (0,_forms_header_form__WEBPACK_IMPORTED_MODULE_12__.headerFormInit)();
         _this.showLoaderOnClick();
         _this.linkListener();
         var form = new _forms_FormHandler__WEBPACK_IMPORTED_MODULE_7__["default"]('.form-js');
@@ -25330,6 +25333,35 @@ function setDefaultImage(preview) {
 
 /***/ }),
 
+/***/ "./resources/js/components/forms/_header-form.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/forms/_header-form.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   headerFormInit: () => (/* binding */ headerFormInit)
+/* harmony export */ });
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/_helpers */ "./resources/js/components/utils/_helpers.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var headerFormInit = function headerFormInit() {
+  $(document).on('click', '.header-form button', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $form = $this.closest('form');
+    if ($form.hasClass('active')) {
+      $form.submit();
+    } else {
+      $form.addClass('active');
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/forms/_number-input.js":
 /*!********************************************************!*\
   !*** ./resources/js/components/forms/_number-input.js ***!
@@ -25555,7 +25587,7 @@ var burger = function burger() {
     e.preventDefault();
     var $t = $(this);
     var isActive = $t.hasClass('active');
-    var $menu = $doc.find('.header-bottom');
+    var $menu = $doc.find('.header-mobile');
     if (isActive) {
       $t.removeClass('active');
       $menu.removeClass('active');

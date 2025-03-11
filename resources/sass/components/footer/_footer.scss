@@ -43,7 +43,6 @@
       }
     }
     &:not(:last-child){
-
       @media (max-width: 450px) {
         border-bottom: 1px solid rgba(#fff, 0.2);
       }
@@ -118,8 +117,13 @@
   }
 
   &__logo {
-    display: block;
     margin-bottom: 6rem;
+    width: 36.4rem;
+    height: 5.1rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #FFF;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 3.9rem;
@@ -128,6 +132,14 @@
     line-height: normal;
     @media (max-width: 1024px) {
       margin-bottom: 2.4rem;font-size: 2.4rem;
+    }
+    @media (max-width: 768px) {
+      width: 28rem;
+      height: 4rem;
+    }
+    @media (max-width: 767px) {
+      width: 17rem;
+      height: 2.5rem;
     }
   }
 
