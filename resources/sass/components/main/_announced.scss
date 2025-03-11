@@ -4,6 +4,8 @@
   gap: 1.6rem;
   align-items: stretch;
 
+
+
   &-item {
     width:  calc(25% - 1.6rem);
     display: flex;
@@ -49,6 +51,35 @@
       @media (max-width: 450px){
         height: 19.4rem;
       }
+    }
+  }
+
+  &-slick{
+    flex-wrap: nowrap;
+    .announced-item{
+      width: 96%;
+      margin: auto;
+    }
+    .announced-item__image{
+      height: 23rem;
+    }
+    .announced-item__title{
+      align-self: stretch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &-head{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+
+    & > *{
+      margin-bottom: 0;
     }
   }
 }

@@ -25877,56 +25877,41 @@ var Slick = /*#__PURE__*/function () {
     this.init();
   }
   return _createClass(Slick, [{
-    key: "setEqualHeight",
-    value: function setEqualHeight($slider) {
-      var selector = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '.clients-list-item';
-      var maxHeight = 0;
-      var $slides = $slider.find('.slick-slide ' + selector);
-      $slides.css('min-height', 'auto');
-      $slides.each(function () {
-        var slideHeight = $(this).outerHeight();
-        if (slideHeight > maxHeight) {
-          maxHeight = slideHeight;
-        }
-      });
-      $slides.css('min-height', maxHeight + 'px');
+    key: "init",
+    value: function init() {
+      this.announcedSliderInit();
     }
   }, {
-    key: "reviewsSliderInit",
-    value: function reviewsSliderInit() {
-      var t = this;
-      $(document).find('.clients-list').each(function () {
+    key: "announcedSliderInit",
+    value: function announcedSliderInit() {
+      $(document).find('.announced-slick').each(function () {
         var $slider = $(this);
         var $prev = $(this).closest('section').find('.slick__prev');
         var $next = $(this).closest('section').find('.slick__next');
+        var $progress = $(this).closest('section').find('.slider-progress');
+        $slider.find('.announced-item').each(function () {
+          var $item = $(this);
+          $item.wrap("<div></div>");
+        });
         $slider.slick({
           slidesToShow: 3,
           arrows: true,
           prevArrow: $prev,
           nextArrow: $next,
-          adaptiveHeight: false,
-          dots: false,
+          dots: true,
           responsive: [{
-            breakpoint: 1100,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 2
             }
           }, {
-            breakpoint: 767,
+            breakpoint: 601,
             settings: {
               slidesToShow: 1
             }
           }]
         });
-        $slider.on('setPosition', function () {
-          t.setEqualHeight($slider);
-        });
       });
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      this.reviewsSliderInit();
     }
   }]);
 }();

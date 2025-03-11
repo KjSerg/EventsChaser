@@ -86,24 +86,21 @@
     &.active {
       label {
         pointer-events: auto;
-        width: 69vw;
-        @media (min-width: 1921px) {
-          width: 52vw;
-        }
+        width: 88rem;
         @media (max-width: 1600px) {
-          width: 80vw;
+          width: 80rem;
         }
-        @media (max-width: 1100px) {
-          width: 78vw;
-        }
-        @media (max-width: 1024px) {
-          width: 90vw;
-        }
-        @media (max-width: 767px){
+        @media (max-width: 1420px) {
           width: 50vw;
         }
-        @media (max-width: 430px){
-          width: 60vw;
+        @media (max-width: 680px){
+          width: 45vw;
+        }
+        @media (max-width: 600px){
+          width: 38vw;
+        }
+        @media (max-width: 500px){
+          width: calc(100vw - 8rem);
         }
       }
 

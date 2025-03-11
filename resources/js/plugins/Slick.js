@@ -7,58 +7,44 @@ export default class Slick {
         this.init();
     }
 
-    setEqualHeight($slider, selector = '.clients-list-item') {
-        let maxHeight = 0;
-        let $slides = $slider.find('.slick-slide ' + selector);
-        $slides.css('min-height', 'auto');
-        $slides.each(function () {
-            let slideHeight = $(this).outerHeight();
-            if (slideHeight > maxHeight) {
-                maxHeight = slideHeight;
-            }
-        });
-
-        $slides.css('min-height', maxHeight + 'px');
+    init(){
+        this.announcedSliderInit();
     }
+    announcedSliderInit(){
 
-    reviewsSliderInit() {
-        const t = this;
-        $(document).find('.clients-list').each(function () {
+        $(document).find('.announced-slick').each(function () {
             const $slider = $(this);
             const $prev = $(this).closest('section').find('.slick__prev');
             const $next = $(this).closest('section').find('.slick__next');
+            const $progress = $(this).closest('section').find('.slider-progress');
+            $slider.find('.announced-item').each(function (){
+                const $item = $(this);
+                $item.wrap( "<div></div>" );
+            });
             $slider.slick({
                 slidesToShow: 3,
                 arrows: true,
                 prevArrow: $prev,
                 nextArrow: $next,
-                adaptiveHeight: false,
-                dots: false,
+                dots: true,
                 responsive: [
+
                     {
-                        breakpoint: 1100,
+                        breakpoint: 1025,
                         settings: {
                             slidesToShow: 2
                         }
                     },
                     {
-                        breakpoint: 767,
+                        breakpoint: 601,
                         settings: {
                             slidesToShow: 1
                         }
-                    },
+                    }
                 ]
-            });
-            $slider.on('setPosition', function () {
-                t.setEqualHeight($slider);
             });
 
         });
-    }
-
-
-    init() {
-        this.reviewsSliderInit();
     }
 }
 
