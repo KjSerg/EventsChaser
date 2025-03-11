@@ -1,10 +1,11 @@
 .about {
-  &__text {
+  &__text:not(.about__text--not-column) {
     columns: 2 auto;
     column-gap: 14rem;
     @media (max-width: 1024px) {
       columns: 1;
     }
+
   }
 
   &-form {
