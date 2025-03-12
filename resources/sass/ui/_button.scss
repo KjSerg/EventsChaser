@@ -1,44 +1,38 @@
-.button{
+
+.button {
   display: inline-flex;
-  padding: 1.5rem 3.2rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
-  background: #FFF;
-  border: 1px solid #FFF;
-  color: #020A1B;
-  font-family: "Exo 2", serif;
-  font-size: 1.7rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 0.8rem;
+  background: #5A00FF;
+  color: #FFF;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2rem;
   font-style: normal;
-  font-weight: 500;
-  line-height: 146%;
-  letter-spacing: 0.0085rem;
-  text-transform: uppercase;
-  outline: none;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: capitalize;
   .icon{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
     flex-grow: 0;
     flex-shrink: 0;
-    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+
+  }
+  svg path{
+    transition: 0.4s ease-in-out;
+    fill: #fff;
   }
   &:hover{
-    background: #020A1B;
-    color: #fff;
-    border-color: rgba(255,255,225,0);
-  }
-  &--border{
-    border: 1px solid #D0D4DD;
-  }
-  &--red{
-    color: #DA3134;
-  }
-  &--red-bg{
-    border: 1px solid #DA3134;
-    background: #DA3134;
-    color: #fff;
+    background: #FFF;
+    color: #5A00FF;
+    svg path{
+      fill: #5A00FF;
+    }
   }
 }

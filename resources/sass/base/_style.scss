@@ -215,9 +215,112 @@ input, textarea {
     font-size: 1.6rem;
   }
 
+  h1{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 5.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 4rem;
+    }
+  }
+
+  h2{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 4.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 3rem;
+    }
+  }
+  h3{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 3.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 2.8rem;
+    }
+  }
+  h4{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 2.2rem;
+    }
+  }
+  h5{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 2rem;
+    }
+  }
+  h6{
+    color: #17043A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%; /* 6.44rem */
+    text-transform: capitalize;
+    @media (max-width: 450px) {
+      font-size: 1.8rem;
+    }
+  }
+
   & > * {
     &:not(:last-child) {
       margin-bottom: 0.8rem;
+    }
+  }
+
+  a {
+    color: #5A00FF;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 1.8rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      left: 0;
+      top: 1.4rem;
+      background-color: #5A00FF;
     }
   }
 }
@@ -244,12 +347,19 @@ input, textarea {
   &-nav {
     display: flex;
     height: 5.6rem;
+    @media (max-width: 600px) {
+      height: 4rem;
+    }
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1.4rem 3.2rem;
+
+      @media (max-width: 600px) {
+        padding: 0.5rem 2rem;
+      }
 
       &:hover {
         border-color: #5A00FF;
@@ -264,8 +374,15 @@ input, textarea {
   &-dots {
     bottom: -3rem !important;
 
-    li button:before {
-      color: #5A00FF!important;
+    li {
+
+      @media (max-width: 600px) {
+        margin: 0 !important;
+      }
+
+      button:before {
+        color: #5A00FF !important;
+      }
     }
   }
 }
@@ -277,4 +394,3 @@ input, textarea {
   justify-content: center;
 
 }
-
