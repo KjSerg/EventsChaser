@@ -4,20 +4,22 @@
   gap: 1.6rem;
   align-items: stretch;
 
-
+  @media (max-width: 1024px){
+    justify-content: center;
+  }
 
   &-item {
     width:  calc(25% - 1.6rem);
     display: flex;
     flex-direction: column;
     @media (max-width: 1024px){
-      width:  calc(33.3% - 1.6rem);
+      width: 50.4rem;
     }
-    @media (max-width: 767px){
-      width:  calc(50% - 1.6rem);
+    @media (max-width: 500px){
+      width: 344px;
     }
-    @media (max-width: 450px){
-      width: 100%;
+    @media (max-width: 360px){
+      width: 300px;
     }
     &__title {
       margin-bottom: 2.4rem;
@@ -48,8 +50,14 @@
       align-self: stretch;
       border-radius: 1.4rem 1.4rem 0rem 0rem;
       overflow: hidden;
-      @media (max-width: 450px){
-        height: 19.4rem;
+      @media (max-width: 1024px){
+        height: 24rem;
+      }
+      @media (max-width: 500px){
+        height: 194px;
+      }
+      @media (max-width: 360px){
+        height: 174px;
       }
     }
   }

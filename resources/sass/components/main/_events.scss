@@ -4,13 +4,19 @@
   gap: 1.6rem;
   align-items: stretch;
 
+  @media (max-width: 1024px){
+    justify-content: center;
+  }
   .event {
     width:  calc(33.33% - 1.6rem);
     @media (max-width: 1024px){
-      width:  calc(50% - 1.6rem);
+      width: 50.4rem;
     }
-    @media (max-width: 767px){
-      flex: 1 1 50.4rem;
+    @media (max-width: 500px){
+      width: 344px;
+    }
+    @media (max-width: 360px){
+      width: 300px;
     }
   }
 
@@ -181,8 +187,11 @@
     height: 28.4rem;
     border-radius: 1.4rem 1.4rem 0rem 0rem;
     overflow: hidden;
-    @media (max-width: 450px) {
-      height: 19.4rem;
+    @media (max-width: 500px){
+      height: 194px;
+    }
+    @media (max-width: 360px){
+      height: 174px;
     }
   }
 }

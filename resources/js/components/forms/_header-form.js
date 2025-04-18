@@ -9,6 +9,13 @@ export const headerFormInit = () => {
             $form.submit();
         } else {
             $form.addClass('active');
+            $form.find('input[name="s"]').focus();
         }
+    });
+    $(document).on('focusout', '.header-form input', function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        const $form = $this.closest('form');
+        $form.removeClass('active');
     });
 }

@@ -63,7 +63,7 @@ export default class Application {
 
     linkListener() {
         const t = this;
-        this.$doc.on('click', 'a[href*="#"]:not(.fancybox, .book-form__trigger)', function (e) {
+        this.$doc.on('click', 'a[href*="#"]:not(.fancybox, .tab-head)', function (e) {
             e.preventDefault();
             const $t = $(this);
             const href = $t.attr('href');

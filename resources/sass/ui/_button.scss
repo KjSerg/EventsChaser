@@ -29,10 +29,9 @@
     fill: #fff;
   }
   &:hover{
-    background: #FFF;
-    color: #5A00FF;
+    background: rgba(#5A00FF, 0.8);
     svg path{
-      fill: #5A00FF;
+
     }
   }
 }
