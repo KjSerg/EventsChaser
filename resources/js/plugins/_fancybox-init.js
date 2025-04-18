@@ -13,6 +13,7 @@ export const fancyboxInit = () => {
         if (href === undefined) return;
         const $el = $(document).find(href);
         if ($el.length === 0) return;
+        $.fancybox.close();
         $.fancybox.open($el);
     });
     $(document).on('click', '.close-fancybox-modal', function (e) {

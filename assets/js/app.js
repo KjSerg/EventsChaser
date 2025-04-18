@@ -25950,6 +25950,7 @@ var fancyboxInit = function fancyboxInit() {
     if (href === undefined) return;
     var $el = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).find(href);
     if ($el.length === 0) return;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().fancybox.close();
     jquery__WEBPACK_IMPORTED_MODULE_0___default().fancybox.open($el);
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.close-fancybox-modal', function (e) {
