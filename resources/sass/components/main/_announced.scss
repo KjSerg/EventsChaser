@@ -23,6 +23,11 @@
     }
     &__title {
       margin-bottom: 2.4rem;
+
+      align-self: stretch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &-data {
