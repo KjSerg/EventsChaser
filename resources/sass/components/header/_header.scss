@@ -170,6 +170,9 @@
     @media (max-width: 660px) {
       flex-wrap: wrap;
     }
+    @media (max-width: 450px) {
+      overflow: hidden;
+    }
   }
 
   &-nav {
